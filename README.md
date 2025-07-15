@@ -1,7 +1,3 @@
-# Tauri + React + Typescript
+# 🎆 MonitorX
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## 🧨 MonitorX is an app that automatically tracks how you spend time on your devices.Basically it uses activitywatch to trick children as a standalone application,hiding main apps from their removal capacity! 
