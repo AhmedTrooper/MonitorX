@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import "./App.css";
 import { Outlet } from "react-router-dom";
-import useOsInfoStore from "./store/OsInfoStore";
+import { useActivityStore } from "./store/ActivityStore";
 import MenuBar from "./components/menuBar/MenuBar";
-import useThemeStore from "./store/ThemeStore";
 import ContextMenuComponent from "./components/contextMenu/ContextMenuComponent";
 import { useContextMenuStore } from "./store/ContextMenuStore";
 import { useApplicationStore } from "./store/ApplicationStore";
 import clsx from "clsx";
+import useOsInfoStore from "./store/osInfoStore";
+import useThemeStore from "./store/themeStore";
+
 
 function App() {
   const dark = useThemeStore((state) => state.dark);
@@ -28,6 +30,9 @@ function App() {
   const checkApplicationUpdate = useApplicationStore(
     (state) => state.checkApplicationUpdate
   );
+  const fetchBuckets = useActivityStore((state) => state.fetchBuckets);
+
+  const eventFetched = useActivityStore((state) => state.eventFetched);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -64,10 +69,16 @@ function App() {
     return () => window.removeEventListener("contextmenu", handleContextMenu);
   }, [contextMenuVisible]);
 
+  useEffect(() => {
+    if (!eventFetched) {
+      fetchBuckets();
+    }
+  });
+
   return (
     <div
       className={clsx(
-        "grid min-h-screen bg-white text-black dark:bg-zinc-900 dark:text-white transition-colors pt-10 max-h-[100vh] select-none",
+        "grid min-h-screen bg-white text-black dark:bg-zinc-900 dark:text-white  transition-colors pt-10 max-h-[100vh] select-none",
         {
           "custom-scrollbar": !isMobileOS,
         }

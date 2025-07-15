@@ -1,4 +1,4 @@
-import { ApplicationState } from "@/interface/store/ApplicationStore";
+import { ApplicationState } from "@/interface/store/ApplicationStoreInterface";
 import { MetadataState } from "@/interface/types/MetadataInterface";
 import { addToast } from "@heroui/react";
 import { getVersion } from "@tauri-apps/api/app";
@@ -6,7 +6,7 @@ import { create } from "zustand";
 
 export const useApplicationStore = create<ApplicationState>((set, get) => ({
   metadataUrl:
-    "https://raw.githubusercontent.com/dalal12345/ReactTS-HeroUI-TauriV2-Tailwindv3.4/main/update/metadata.json",
+    "https://raw.githubusercontent.com/AhmedTrooper/MonitorX/main/update/metadata.json",
   menuBarVisible: false,
   setMenuBarVisible: (status) => set({ menuBarVisible: status }),
   toggleMenuBar: () =>
@@ -38,7 +38,7 @@ export const useApplicationStore = create<ApplicationState>((set, get) => ({
       let response = await fetch(applicationStore.metadataUrl);
       if (response.status === 200) {
         let data = (await response.json()) as MetadataState;
-        console.log(data)
+        console.log(data);
         applicationStore.setMetadataInformation(data);
         applicationStore.setOnlineApplicationVersion(
           data.onlineApplicationVersion

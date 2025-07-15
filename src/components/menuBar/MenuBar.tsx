@@ -17,7 +17,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 import { useApplicationStore } from "@/store/ApplicationStore";
 import { clsx } from "clsx";
 import MetadataInfo from "./desktop/MetadataInfo";
-import useOsInfoStore from "@/store/OsInfoStore";
+import useOsInfoStore from "../../store/osInfoStore";
+
+
 
 export default function MenuBar() {
   const [isFullScreen, setIsFullScreen] = useState<boolean | null>(null);

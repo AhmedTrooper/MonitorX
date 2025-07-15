@@ -1,4 +1,4 @@
-import { ContextMenuState } from "@/interface/store/ContextMenuStore";
+import { ContextMenuState } from "@/interface/store/ContextMenuStoreInterface";
 import { create } from "zustand";
 
 export const useContextMenuStore = create<ContextMenuState>((set) => ({

@@ -22,7 +22,7 @@
           "url": "https://*.tauri.app"
         },
         {
-          "url": "http://localhost:5600/api/0/buckets/"
+          "url": "http://localhost:5600"
         }
       ],
       "deny": [

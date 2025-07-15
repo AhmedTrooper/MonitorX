@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { platform } from "@tauri-apps/plugin-os";
-import { OsInfoState } from "@/interface/store/OsInfoStore";
+import { OsInfoState } from "@/interface/store/OsInfoStoreInterface";
 
 const useOsInfoStore = create<OsInfoState>((set, get) => ({
   osName: null,

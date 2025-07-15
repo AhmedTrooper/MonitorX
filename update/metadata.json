@@ -1,19 +1,15 @@
 {
   "onlineApplicationVersion": "0.1.0",
-  "release_date": "YYYY-MM-DD",
+  "release_date": "2025-07-15",
   "features": [
-    "Feature 1",
-    "Feature 2"
+    "Monitor Activity"
   ],
-  "fixed_errors": [
-    "Error 1"
-  ],
-  "notes": "This release focuses on various new sections",
-  "release_url": "https://github.com/dalal12345/ReactTS-HeroUI-TauriV2-Tailwindv3.4/releases",
+  "fixed_errors": [],
+  "notes": "This release is the first release",
+  "release_url": "https://github.com/AhmedTrooper/MonitorX/releases",
   "author": "AhmedTrooper",
   "severity": "medium",
   "platforms": [
-    "windows",
-    "android"
+    "windows"
   ]
 }

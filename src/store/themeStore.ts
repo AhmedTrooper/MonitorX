@@ -1,4 +1,4 @@
-import { ThemeState } from "@/interface/store/ThemeStore";
+import { ThemeState } from "@/interface/store/ThemeStoreInterface";
 import { create } from "zustand";
 
 const useThemeStore = create<ThemeState>((set) => ({
