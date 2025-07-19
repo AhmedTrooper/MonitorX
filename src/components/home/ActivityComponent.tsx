@@ -3,7 +3,6 @@ import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Alert, Input } from "@heroui/react";
 import { Trash2 } from "lucide-react";
 import DeleteComponent from "./DeleteComponent";
-import { isEmpty } from "lodash";
 
 export default function ActivityComponent() {
   const windowEventsArr = useActivityStore((state) => state.windowEventsArr);
