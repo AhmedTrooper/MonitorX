@@ -30,6 +30,8 @@
           "url": "https://private.tauri.app"
         }
       ]
-    }
+    },
+    "fs:default",
+    "fs:allow-home-write-recursive"
   ]
 }

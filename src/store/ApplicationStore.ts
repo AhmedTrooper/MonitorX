@@ -38,7 +38,7 @@ export const useApplicationStore = create<ApplicationState>((set, get) => ({
       let response = await fetch(applicationStore.metadataUrl);
       if (response.status === 200) {
         let data = (await response.json()) as MetadataState;
-        console.log(data);
+        
         applicationStore.setMetadataInformation(data);
         applicationStore.setOnlineApplicationVersion(
           data.onlineApplicationVersion

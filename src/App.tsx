@@ -35,6 +35,7 @@ function App() {
   const eventFetched = useActivityStore((state) => state.eventFetched);
   const databaseLoaded = useDatabaseStore((state) => state.databaseLoaded);
   const loadDatabase = useDatabaseStore((state) => state.loadDatabase);
+  const retrivePassword = useActivityStore((state) => state.retrivePassword);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -76,6 +77,10 @@ function App() {
     window.addEventListener("contextmenu", handleContextMenu);
     return () => window.removeEventListener("contextmenu", handleContextMenu);
   }, [contextMenuVisible]);
+
+  useEffect(() => {
+    retrivePassword();
+  }, []);
 
   useEffect(() => {
     if (!eventFetched) {
