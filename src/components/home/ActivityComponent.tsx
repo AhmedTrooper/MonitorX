@@ -25,7 +25,7 @@ export default function ActivityComponent() {
                 <p className="cursor-pointer">
                   {" "}
                   <Trash2 className="text-primary-600"/>
-                </p>
+                  {event.data.app}                </p>
               </CardFooter>
             </Card>
           );

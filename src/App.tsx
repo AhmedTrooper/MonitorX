@@ -9,7 +9,7 @@ import { useApplicationStore } from "./store/ApplicationStore";
 import clsx from "clsx";
 import useOsInfoStore from "./store/osInfoStore";
 import useThemeStore from "./store/themeStore";
-
+import { useDatabaseStore } from "./store/DatabaseStore";
 
 function App() {
   const dark = useThemeStore((state) => state.dark);
@@ -33,6 +33,8 @@ function App() {
   const fetchBuckets = useActivityStore((state) => state.fetchBuckets);
 
   const eventFetched = useActivityStore((state) => state.eventFetched);
+  const databaseLoaded = useDatabaseStore((state) => state.databaseLoaded);
+  const loadDatabase = useDatabaseStore((state) => state.loadDatabase);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -54,6 +56,12 @@ function App() {
       localStorage.setItem("theme", "light");
     }
   }, [dark]);
+
+  useEffect(() => {
+    if (databaseLoaded) {
+      loadDatabase();
+    }
+  }, []);
 
   useEffect(() => {
     checkApplicationUpdate();
